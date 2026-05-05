@@ -1,0 +1,36 @@
+{
+  "accuracy": 100.0,
+  "precision_scam": 100.0,
+  "recall_scam": 100.0,
+  "f1_scam": 100.0,
+  "total_messages": 101,
+  "scam_count": 50,
+  "legit_count": 51,
+  "vocab_size": 500,
+  "train_size": 80,
+  "test_size": 21,
+  "top_scam_words": [
+    "claim",
+    "pay",
+    "net",
+    "uk",
+    "hmrc"
+  ],
+  "top_legit_words": [
+    "in",
+    "the",
+    "app",
+    "reminder",
+    "on"
+  ],
+  "confusion_matrix": [
+    [
+      10,
+      0
+    ],
+    [
+      0,
+      11
+    ]
+  ]
+}

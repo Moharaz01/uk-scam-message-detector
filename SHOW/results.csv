@@ -1,0 +1,22 @@
+Message,Actual_Label,Predicted_Label,Scam_Probability_%,Correct
+"FREE GOVERNMENT GRANT: UK residents may be eligible for £2,000 green energy grant. Apply at govgrant-uk.net",SCAM,SCAM,76.7,✅ YES
+Lloyds Bank: We have detected unusual activity. Verify your details at: http://lloyds-secure.com/verify,SCAM,SCAM,70.8,✅ YES
+"Free Msg: You are entitled to £3,500 in PPI compensation. Text CLAIM to 80888 or call 0844 899 000",SCAM,SCAM,70.2,✅ YES
+"Your TV Licence expires today. To avoid a £1,000 fine pay now at tvlicence-renew.org",SCAM,SCAM,69.3,✅ YES
+Ofgem: You are entitled to a £400 energy support payment. Submit your bank details at ofgem-payment.uk,SCAM,SCAM,66.9,✅ YES
+Vodafone: Your account is due for renewal. Claim a free iPhone 15 upgrade at vodafone-promo.net now,SCAM,SCAM,66.5,✅ YES
+URGENT NOTICE: Your National Insurance number has been suspended due to suspicious activity. Call 0203 787 0155,SCAM,SCAM,59.6,✅ YES
+Royal Mail: Your parcel is on hold. Pay £2.99 delivery fee to release it: http://royalmail-delivery.net/pay,SCAM,SCAM,54.8,✅ YES
+WARNING: Your IP address has been flagged for illegal activity. Call HMRC cybercrime unit: 0203 514 0000,SCAM,SCAM,52.7,✅ YES
+Sky TV: Your subscription payment failed. Update your card details at sky-billing.net to avoid disconnection,SCAM,SCAM,52.3,✅ YES
+"Student Finance England: Your maintenance loan payment of £1,455 has been paid into your account",LEGITIMATE,LEGITIMATE,48.3,✅ YES
+Your TV Licence has been renewed automatically. Next renewal: October 2025. Reference: AB123456,LEGITIMATE,LEGITIMATE,45.7,✅ YES
+From HR: Please complete your annual leave request before 5pm Friday using the company portal,LEGITIMATE,LEGITIMATE,40.9,✅ YES
+Your Virgin Money savings interest payment of £12.43 has been added to your account today,LEGITIMATE,LEGITIMATE,38.3,✅ YES
+Delivery from Amazon: Your order #204-6789 has been dispatched and will arrive tomorrow by 9pm,LEGITIMATE,LEGITIMATE,38.2,✅ YES
+Your MOT reminder: Your vehicle's MOT expires on 22 December. Book at any DVSA-approved centre.,LEGITIMATE,LEGITIMATE,27.3,✅ YES
+Your Spotify Premium renews on 8 December for £10.99. Cancel anytime at spotify.com/account,LEGITIMATE,LEGITIMATE,26.4,✅ YES
+Argos: Your order for the Dyson Hoover is ready for collection at your chosen store today,LEGITIMATE,LEGITIMATE,24.0,✅ YES
+Your National Rail ticket confirmation for London Paddington to Bristol Temple Meads on 14 Nov is attached,LEGITIMATE,LEGITIMATE,22.3,✅ YES
+This is the lettings agency. The boiler inspection is confirmed for Thursday between 9am and 12pm,LEGITIMATE,LEGITIMATE,21.4,✅ YES
+Just a reminder that tomorrow is bin day - don't forget to put the green recycling bin out!,LEGITIMATE,LEGITIMATE,18.0,✅ YES

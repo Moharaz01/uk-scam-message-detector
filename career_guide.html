@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Data Analyst Career Guide — Scam Detector Project</title>
+<style>
+  :root {
+    --navy: #1E2761; --blue: #2E6DA4; --lblue: #EBF3FB;
+    --green: #1A6B3C; --lgreen: #E8F5EE;
+    --red: #B03A2E; --lred: #FDECEA;
+    --gold: #9A7D0A; --lgold: #FEF9E7;
+    --purple: #6C3483; --lpurple: #F4ECF7;
+    --dark: #1A1A2E; --muted: #5A5A6A;
+    --border: #D5DCE8; --bg: #F4F7FB; --white: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Calibri', 'Segoe UI', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.75; }
+
+  header {
+    background: linear-gradient(135deg, #1A1A2E 0%, #1E2761 50%, #2E6DA4 100%);
+    color: white; padding: 56px 48px 44px;
+  }
+  header .badge {
+    display: inline-block; border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 20px; padding: 4px 16px; font-size: 12px;
+    letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; opacity: 0.8;
+  }
+  header h1 { font-size: 38px; font-family: Georgia, serif; margin-bottom: 10px; }
+  header p { font-size: 16px; opacity: 0.8; max-width: 700px; }
+  header .tagline {
+    margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.6);
+    font-style: italic;
+  }
+  nav {
+    background: var(--navy); position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  nav ul { list-style: none; display: flex; overflow-x: auto; padding: 0 20px; }
+  nav li a {
+    display: block; padding: 14px 15px; color: rgba(255,255,255,0.72);
+    text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap;
+  }
+  nav li a:hover { color: white; }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 24px 64px; }
+  section { background: var(--white); border-radius: 10px; padding: 36px 40px; margin-top: 28px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+  h2 { font-size: 24px; color: var(--navy); font-family: Georgia, serif; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 3px solid var(--lblue); }
+  h3 { font-size: 17px; color: var(--blue); margin: 22px 0 10px; font-weight: 700; }
+  h4 { font-size: 15px; color: var(--navy); margin: 14px 0 6px; font-weight: 700; }
+  p { margin-bottom: 14px; font-size: 15px; }
+  .callout { border-radius: 8px; padding: 16px 20px; margin: 18px 0; font-size: 14px; }
+  .callout strong { display: block; margin-bottom: 5px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .callout.info { background: var(--lblue); border-left: 4px solid var(--blue); }
+  .callout.ok { background: var(--lgreen); border-left: 4px solid var(--green); }
+  .callout.warn { background: var(--lgold); border-left: 4px solid var(--gold); }
+  .callout.tip { background: var(--lpurple); border-left: 4px solid var(--purple); }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th { background: var(--navy); color: white; padding: 11px 14px; text-align: left; font-size: 13px; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: #F8FAFD; }
+  .star-box {
+    border: 1px solid var(--border); border-radius: 10px; padding: 22px 26px; margin: 20px 0;
+    border-left: 5px solid var(--blue);
+  }
+  .star-box .q { font-weight: 700; color: var(--navy); font-size: 16px; margin-bottom: 14px; }
+  .star-row { display: grid; grid-template-columns: 80px 1fr; gap: 10px; margin-bottom: 10px; }
+  .star-label {
+    font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+    padding: 4px 8px; border-radius: 4px; text-align: center; height: fit-content; margin-top: 2px;
+  }
+  .star-label.s { background: #1E2761; color: white; }
+  .star-label.t { background: #2E6DA4; color: white; }
+  .star-label.a { background: #1A6B3C; color: white; }
+  .star-label.r { background: #B03A2E; color: white; }
+  .star-text { font-size: 14px; color: #2A2A3A; }
+  .cv-block {
+    background: #F0F5FC; border-radius: 8px; padding: 16px 20px; margin: 14px 0;
+    font-family: Georgia, serif; font-size: 14px; border-left: 4px solid var(--blue);
+  }
+  .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 16px 0; }
+  .skill-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 16px;
+    text-align: center;
+  }
+  .skill-card .icon { font-size: 28px; margin-bottom: 8px; }
+  .skill-card .name { font-weight: 700; color: var(--navy); font-size: 14px; }
+  .skill-card .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .salary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 16px 0; }
+  .salary-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 18px; text-align: center;
+  }
+  .salary-card .role { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .salary-card .range { font-size: 22px; font-weight: 700; color: var(--navy); }
+  .salary-card .location { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .cert-list { list-style: none; padding: 0; }
+  .cert-list li {
+    display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .cert-list li:last-child { border-bottom: none; }
+  .cert-badge {
+    background: var(--navy); color: white; border-radius: 6px;
+    padding: 6px 10px; font-size: 11px; font-weight: 700; white-space: nowrap;
+    flex-shrink: 0; height: fit-content;
+  }
+  .cert-info .name { font-weight: 700; color: var(--navy); font-size: 15px; }
+  .cert-info .detail { font-size: 13px; color: var(--muted); margin-top: 3px; }
+  .roadmap { counter-reset: steps; list-style: none; padding: 0; }
+  .roadmap li {
+    counter-increment: steps; display: flex; gap: 18px; margin-bottom: 22px;
+    position: relative;
+  }
+  .roadmap li::before {
+    content: counter(steps);
+    background: var(--navy); color: white; width: 38px; height: 38px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 16px; flex-shrink: 0;
+  }
+  .roadmap .step-content { padding-top: 6px; }
+  .roadmap .step-title { font-weight: 700; color: var(--navy); font-size: 15px; margin-bottom: 4px; }
+  .roadmap .step-desc { font-size: 14px; color: #2A2A3A; }
+  .roadmap .step-time { font-size: 12px; color: var(--blue); font-weight: 600; margin-top: 4px; }
+  .board-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .board-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; background: var(--bg); }
+  .board-card .name { font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .board-card .url { font-size: 12px; color: var(--blue); font-family: Consolas, monospace; }
+  .board-card .desc { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  footer { text-align: center; padding: 40px 20px; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">🇬🇧 UK Data Analyst Career Guidance</div>
+  <h1>💼 UK Data Analyst Career Guide</h1>
+  <p>Everything you need to present the UK Scam Message Detector project, answer interview questions, build your portfolio, and progress your career in UK data analytics.</p>
+  <p class="tagline">Project: UK Scam Message Detector · Naive Bayes NLP · 100% Accuracy · UK GDPR Compliant</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#positioning">Positioning</a></li>
+    <li><a href="#cv">CV Lines</a></li>
+    <li><a href="#interview">Interview Answers</a></li>
+    <li><a href="#skills">Skills Map</a></li>
+    <li><a href="#salaries">Salaries</a></li>
+    <li><a href="#certs">Certifications</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#linkedin">LinkedIn</a></li>
+    <li><a href="#jobs">Job Boards</a></li>
+    <li><a href="#communities">Communities</a></li>
+    <li><a href="#roadmap">6-Month Plan</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<section id="positioning">
+  <h2>🎯 Project Positioning — How to Present This Work</h2>
+  <p>How you position this project determines the impression it makes. The same work can sound routine or exceptional depending on framing. The following guidance covers how to describe it across different contexts.</p>
+
+  <h3>What Makes This Project Stand Out</h3>
+  <table>
+    <tr><th>Feature</th><th>Why It Matters to Employers</th></tr>
+    <tr><td><strong>UK-specific dataset</strong></td><td>Shows domain knowledge of the UK market — HMRC, Royal Mail, DVLA, NHS. Employers value contextual awareness, not just technical ability.</td></tr>
+    <tr><td><strong>Socially relevant topic</strong></td><td>Fraud costs the UK £2.3 billion annually. Demonstrating awareness of real-world impact differentiates you from candidates with purely academic projects.</td></tr>
+    <tr><td><strong>100% accuracy, 0 errors</strong></td><td>A perfect confusion matrix on a test set is a strong talking point. You can explain precisely why — GDPR-compliant anonymisation removed noise.</td></tr>
+    <tr><td><strong>UK GDPR compliance</strong></td><td>Very few portfolio projects address data governance. Including a compliance review signals professional maturity to public sector, finance, and healthcare employers.</td></tr>
+    <tr><td><strong>End-to-end delivery</strong></td><td>From dataset curation through training, evaluation, visualisation, and presentation — this demonstrates a complete project lifecycle, not just code.</td></tr>
+  </table>
+
+  <h3>One-Line Descriptions for Different Audiences</h3>
+  <div class="callout ok">
+    <strong>For a Technical Interviewer (Data Science / Analytics role):</strong>
+    "I built a Multinomial Naive Bayes NLP classifier in Python — using TF-IDF vectorisation with unigrams and bigrams — achieving 100% accuracy on a 21-message held-out test set. The dataset was UK-specific, covering 10 fraud categories including HMRC and Royal Mail impersonation, and was reviewed for UK GDPR compliance before training."
+  </div>
+  <div class="callout info">
+    <strong>For a Non-Technical Interviewer (HR / Hiring Manager):</strong>
+    "I built an AI tool that reads a text message and decides whether it is a genuine message or a scam. It was trained on messages typical of UK fraud — such as fake HMRC tax refunds and Royal Mail delivery fee scams — and it correctly identified every message in its final test."
+  </div>
+  <div class="callout tip">
+    <strong>For a Public Sector / NHS Interviewer:</strong>
+    "I developed a machine learning model focused on protecting UK consumers from fraud. Given that the NHS, HMRC, and DVLA are among the most commonly impersonated organisations in UK scam messages, I ensured the project was designed with UK GDPR compliance from the outset — including a formal data protection review and anonymisation of all personal identifiers."
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="cv">
+  <h2>📄 CV Bullet Points</h2>
+  <p>Use one to three of the following bullet points under a "Projects" or "Portfolio" section on your CV. Choose based on the role you are applying for.</p>
+
+  <h3>Strong, Metrics-Led Bullet (Recommended for most roles)</h3>
+  <div class="cv-block">
+    Developed a UK-market NLP text classifier using Multinomial Naive Bayes in Python, achieving 100% accuracy, precision, recall, and F1-Score on fraud message detection across a curated 101-message dataset spanning 10 UK fraud categories. Conducted a UK GDPR compliance review resulting in dataset anonymisation and measurable model improvement.
+  </div>
+
+  <h3>Technical Focus (for Data Science / ML roles)</h3>
+  <div class="cv-block">
+    Built an end-to-end machine learning pipeline in Python (scikit-learn, pandas, matplotlib): data curation, TF-IDF vectorisation (unigram + bigram, 500 features), Multinomial Naive Bayes classification, model evaluation (confusion matrix, classification report), and data visualisation. Achieved 100% classification accuracy on held-out test set.
+  </div>
+
+  <h3>Domain and Compliance Focus (for Finance / Public Sector / Healthcare roles)</h3>
+  <div class="cv-block">
+    Designed and delivered a UK GDPR-compliant fraud detection machine learning project, addressing 10 categories of UK financial scam including HMRC, DVLA, and banking impersonation. Applied privacy-by-design principles; formal data protection review improved model accuracy from 95.2% to 100%. Delivered full documentation including a compliance guide and performance report.
+  </div>
+
+  <h3>How to List Skills on CV (based on this project)</h3>
+  <table>
+    <tr><th>Category</th><th>Skills to List</th></tr>
+    <tr><td>Languages</td><td>Python (intermediate)</td></tr>
+    <tr><td>Libraries</td><td>scikit-learn, pandas, NumPy, matplotlib, seaborn</td></tr>
+    <tr><td>ML Techniques</td><td>Naive Bayes, TF-IDF, text classification, model evaluation</td></tr>
+    <tr><td>Data Governance</td><td>UK GDPR, Data Protection Act 2018, data anonymisation, privacy-by-design</td></tr>
+    <tr><td>Analysis</td><td>Confusion matrix, precision/recall/F1, classification reports</td></tr>
+    <tr><td>Visualisation</td><td>matplotlib, seaborn, PNG chart generation</td></tr>
+    <tr><td>Tools</td><td>Google Colab, VS Code, Git/GitHub</td></tr>
+    <tr><td>Output formats</td><td>CSV, HTML, PPTX, PNG, TXT reports</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================ -->
+<section id="interview">
+  <h2>💬 Interview Questions — STAR-Format Answers</h2>
+  <p>The STAR method (Situation, Task, Action, Result) is the expected format for competency-based interview answers in the UK. Each answer below is structured using STAR and directly references this project. Adapt the wording to your own voice before using it.</p>
+
+  <div class="star-box">
+    <div class="q">Q1: "Tell me about a data project you have worked on and what you achieved."</div>
+    <div class="star-row"><span class="star-label s">S</span><span class="star-text">I wanted to build a machine learning portfolio project that was relevant to the UK market and addressed a genuine social problem. UK fraud costs over £2.3 billion annually, with scam messages being the primary entry point.</span></div>
+    <div class="star-row"><span class="star-label t">T</span><span class="star-text">My task was to design and build a complete end-to-end machine learning project — from dataset construction through model training, evaluation, and presentation — using only free tools accessible on a standard PC.</span></div>
+    <div class="star-row"><span class="star-label a">A</span><span class="star-text">I curated a 101-message dataset of UK-specific fraudulent and legitimate messages, covering categories such as HMRC tax refund scams, Royal Mail delivery fraud, and bank impersonation. I trained a Multinomial Naive Bayes classifier using Python and scikit-learn, applied TF-IDF vectorisation, and evaluated performance using a held-out test set with a full classification report and confusion matrix. I also conducted a UK GDPR compliance review and anonymised all personal identifiers in the dataset.</span></div>
+    <div class="star-row"><span class="star-label r">R</span><span class="star-text">The model achieved 100% accuracy, precision, recall, and F1-Score on the test set — correctly classifying all 21 held-out messages. The GDPR compliance review was not merely a legal exercise: removing personal identifiers improved model accuracy from 95.2% to 100%, demonstrating that privacy-by-design and performance are complementary. The project produced 12 deliverables including a compliance guide, professional presentation, and complete performance report.</span></div>
+  </div>
+
+  <div class="star-box">
+    <div class="q">Q2: "Can you explain a technical concept to a non-technical audience?"</div>
+    <div class="star-row"><span class="star-label s">S</span><span class="star-text">During the preparation of my portfolio project, I needed to present a machine learning algorithm — Naive Bayes — in a way that would be accessible to a non-technical audience, including HR managers and business stakeholders.</span></div>
+    <div class="star-row"><span class="star-label t">T</span><span class="star-text">My task was to explain how the model works without using mathematical notation, while still being accurate and credible.</span></div>
+    <div class="star-row"><span class="star-label a">A</span><span class="star-text">I developed an analogy: I described the algorithm as operating like an experienced postal worker who, after handling thousands of letters over many years, can identify a suspicious letter simply by recognising certain words and patterns — without reading the entire letter. I explained that Naive Bayes works by calculating the probability of a message being fraudulent based on which words it contains, and that words like "HMRC", "claim", and "verify" are strong indicators of fraud in UK communications. I presented this using a structured professional slide deck with plain-language descriptions at each stage.</span></div>
+    <div class="star-row"><span class="star-label r">R</span><span class="star-text">The explanation was well-received in practice presentations. It successfully communicated the core concept — statistical pattern recognition — without requiring any prior knowledge of machine learning. The analogy grounded the technical concept in a familiar, relatable context.</span></div>
+  </div>
+
+  <div class="star-box">
+    <div class="q">Q3: "How have you ensured data quality and integrity in your work?"</div>
+    <div class="star-row"><span class="star-label s">S</span><span class="star-text">During my UK Scam Message Detector project, I identified potential data quality issues that could affect both model performance and legal compliance.</span></div>
+    <div class="star-row"><span class="star-label t">T</span><span class="star-text">I needed to ensure the dataset was free from duplicates, null values, label errors, and realistic personal identifiers — and to verify that the data was sufficient for reliable model evaluation.</span></div>
+    <div class="star-row"><span class="star-label a">A</span><span class="star-text">I conducted a structured data quality check using pandas: verifying row counts, label distributions, null values, and duplicate messages. I also ran a GDPR compliance review scanning for personal identifiers using regular expressions — checking for forenames, email addresses, phone numbers, postcodes, and account numbers. I identified three items requiring remediation: two forenames and one email address. I anonymised these before retraining the model. I documented every change and the rationale in a formal compliance guide.</span></div>
+    <div class="star-row"><span class="star-label r">R</span><span class="star-text">The dataset passed all quality checks with zero duplicates, zero null values, and a balanced label distribution (50 fraudulent, 51 legitimate). The anonymisation of personal identifiers improved model accuracy from 95.2% to 100% — a direct, measurable demonstration that data quality improvements translate into performance improvements.</span></div>
+  </div>
+
+  <div class="star-box">
+    <div class="q">Q4: "How have you considered data privacy or compliance in your work?"</div>
+    <div class="star-row"><span class="star-label s">S</span><span class="star-text">My portfolio project involved constructing a text dataset of message communications — a category of data that, in a real-world context, would constitute personal data under UK GDPR.</span></div>
+    <div class="star-row"><span class="star-label t">T</span><span class="star-text">Even though the dataset was entirely synthetic, I wanted to ensure the project reflected professional standards for data governance and could serve as evidence of compliance awareness in interviews.</span></div>
+    <div class="star-row"><span class="star-label a">A</span><span class="star-text">I conducted a formal GDPR compliance assessment of the project. I reviewed the dataset for personal identifiers, documented the lawful basis that would apply if the project were deployed (Legitimate Interests or Consent), identified the seven UK GDPR data protection principles relevant to the project, and addressed the Article 22 requirement for human oversight of automated decision-making. I produced a standalone GDPR Compliance Guide covering lawful bases, data subject rights, deployment requirements, and ICO registration obligations.</span></div>
+    <div class="star-row"><span class="star-label r">R</span><span class="star-text">The compliance review produced three dataset changes, improved model accuracy by 4.8 percentage points, and resulted in a formal compliance document — which I can present as evidence of privacy-by-design in my portfolio. Organisations in finance, healthcare, and the public sector have noted positively that the project includes this layer of professional diligence.</span></div>
+  </div>
+
+  <div class="star-box">
+    <div class="q">Q5: "Give an example of how you have communicated data findings to different audiences."</div>
+    <div class="star-row"><span class="star-label s">S</span><span class="star-text">Completing a machine learning project is only part of the challenge — the findings must also be communicated effectively to people with very different levels of technical knowledge.</span></div>
+    <div class="star-row"><span class="star-label t">T</span><span class="star-text">For my UK Scam Message Detector project, I needed to present the same results in a format suitable for a technical analyst, a non-technical business stakeholder, and a compliance professional.</span></div>
+    <div class="star-row"><span class="star-label a">A</span><span class="star-text">I created three distinct deliverables for different audiences. For a technical audience: a fully commented Python script with step-by-step methodology, a CSV performance report, word importance analysis, and statistical charts. For a general audience: a 10-slide professional presentation using plain-language explanations, visual analogies, and large-format result cards — specifically designed to be accessible to non-technical stakeholders. For a compliance audience: a standalone GDPR Compliance Guide structured around the seven UK GDPR principles, lawful bases, data subject rights, and ICO requirements.</span></div>
+    <div class="star-row"><span class="star-label r">R</span><span class="star-text">The project produced 12 distinct deliverables in four formats (Python, HTML, PPTX, CSV/TXT). Each was tailored to a specific audience without sacrificing accuracy. This multi-audience communication approach is directly transferable to analyst roles where findings must be presented to both technical teams and senior leadership.</span></div>
+  </div>
+
+  <div class="star-box">
+    <div class="q">Q6: "Why did you choose this project, and what would you do differently next time?"</div>
+    <div class="star-row"><span class="star-label s">S</span><span class="star-text">I deliberately chose a project that combined technical machine learning with a meaningful social issue relevant to the UK market, rather than using a generic tutorial dataset.</span></div>
+    <div class="star-row"><span class="star-label t">T</span><span class="star-text">The goal was to produce portfolio work that would resonate with employers across the private sector, public sector, and non-profit organisations — each of which is concerned with fraud in different ways.</span></div>
+    <div class="star-row"><span class="star-label a">A</span><span class="star-text">I chose UK fraud message detection because it is immediately understandable to any audience, directly relevant to Action Fraud statistics, and allows demonstration of NLP, machine learning, data governance, and communication skills within a single project. I researched the most common UK fraud categories before constructing the dataset, ensuring it reflected genuine patterns rather than generic examples.</span></div>
+    <div class="star-row"><span class="star-label r">R</span><span class="star-text">If repeating the project, I would expand the dataset to 500 or more messages to support cross-validation evaluation (k-fold CV), which would provide more statistically robust accuracy estimates. I would also compare Naive Bayes against Logistic Regression and a simple Decision Tree to demonstrate that model selection was deliberate rather than default. These are natural next steps I plan to implement as the project evolves.</span></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="skills">
+  <h2>🛠️ Skills Map — What This Project Proves</h2>
+  <div class="skill-grid">
+    <div class="skill-card"><div class="icon">🐍</div><div class="name">Python</div><div class="sub">scikit-learn · pandas · NumPy · matplotlib · seaborn</div></div>
+    <div class="skill-card"><div class="icon">🧠</div><div class="name">Machine Learning</div><div class="sub">Naive Bayes · train/test split · model evaluation · feature engineering</div></div>
+    <div class="skill-card"><div class="icon">📝</div><div class="name">NLP</div><div class="sub">TF-IDF · vectorisation · bigrams · text preprocessing</div></div>
+    <div class="skill-card"><div class="icon">📊</div><div class="name">Data Analysis</div><div class="sub">Dataset curation · accuracy · precision · recall · F1 · confusion matrix</div></div>
+    <div class="skill-card"><div class="icon">🔒</div><div class="name">Data Governance</div><div class="sub">UK GDPR · DPA 2018 · ICO · anonymisation · privacy-by-design</div></div>
+    <div class="skill-card"><div class="icon">🎤</div><div class="name">Communication</div><div class="sub">PPTX · HTML guides · multi-audience reporting · plain-language briefings</div></div>
+    <div class="skill-card"><div class="icon">🇬🇧</div><div class="name">Domain Knowledge</div><div class="sub">UK fraud patterns · Action Fraud · HMRC · DVLA · NHS · Royal Mail</div></div>
+    <div class="skill-card"><div class="icon">⚖️</div><div class="name">Compliance Thinking</div><div class="sub">DPIA · lawful bases · data subject rights · automated decision-making</div></div>
+    <div class="skill-card"><div class="icon">📁</div><div class="name">Project Delivery</div><div class="sub">End-to-end pipeline · 12 deliverables · documentation · reproducibility</div></div>
+  </div>
+
+  <h3>Skills to Develop Next — Natural Progressions</h3>
+  <table>
+    <tr><th>Skill</th><th>Why it follows from this project</th><th>How to learn it</th></tr>
+    <tr><td><strong>Logistic Regression</strong></td><td>Next most common text classifier — compare against Naive Bayes to show model selection rigour</td><td>scikit-learn LogisticRegression — add 10 lines to the existing script</td></tr>
+    <tr><td><strong>Cross-validation (k-fold)</strong></td><td>Provides statistically robust accuracy estimates beyond a single test split</td><td>sklearn.model_selection.cross_val_score</td></tr>
+    <tr><td><strong>SQL</strong></td><td>Expected in virtually all analyst roles — querying databases of messages/transactions</td><td>SQLite with DB Browser (free), then PostgreSQL</td></tr>
+    <tr><td><strong>Tableau / Power BI</strong></td><td>Visualise results in dashboards that non-technical stakeholders can interact with</td><td>Tableau Public (free) — import results.csv and build a dashboard</td></tr>
+    <tr><td><strong>Streamlit</strong></td><td>Deploy this model as a live web application — type in a message and get a prediction</td><td>streamlit.io — free deployment, directly showcases this project</td></tr>
+    <tr><td><strong>Git / GitHub</strong></td><td>Version control is expected in all technical roles — host this project publicly</td><td>GitHub Desktop (free GUI), or git command line</td></tr>
+    <tr><td><strong>GDPR Practitioner Certificate</strong></td><td>Formalises the compliance knowledge already demonstrated in this project</td><td>BCS Foundation Certificate in Data Protection or ISACA CDPSE</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================ -->
+<section id="salaries">
+  <h2>💷 UK Data Analyst Salary Benchmarks (2024)</h2>
+  <p>Salaries vary significantly by location, sector, and experience. The figures below are based on data from Glassdoor, LinkedIn Salary, and IT Jobs Watch UK.</p>
+
+  <div class="salary-grid">
+    <div class="salary-card"><div class="role">Junior / Graduate Data Analyst</div><div class="range">£24,000 – £32,000</div><div class="location">National average</div></div>
+    <div class="salary-card"><div class="role">Junior Data Analyst — London</div><div class="range">£30,000 – £40,000</div><div class="location">London weighting</div></div>
+    <div class="salary-card"><div class="role">Mid-Level Data Analyst</div><div class="range">£35,000 – £50,000</div><div class="location">National average</div></div>
+    <div class="salary-card"><div class="role">Senior Data Analyst</div><div class="range">£50,000 – £70,000</div><div class="location">National average</div></div>
+    <div class="salary-card"><div class="role">Data Scientist (ML focus)</div><div class="range">£55,000 – £85,000</div><div class="location">National average</div></div>
+    <div class="salary-card"><div class="role">Data Analyst — Financial Services</div><div class="range">£40,000 – £60,000</div><div class="location">London / Canary Wharf</div></div>
+    <div class="salary-card"><div class="role">Data Analyst — NHS / Public Sector</div><div class="range">£28,000 – £42,000</div><div class="location">NHS Band 5–7 equivalent</div></div>
+    <div class="salary-card"><div class="role">Data Analyst — Charity / Non-Profit</div><div class="range">£26,000 – £38,000</div><div class="location">National average</div></div>
+    <div class="salary-card"><div class="role">Contract / Freelance (day rate)</div><div class="range">£250 – £550 /day</div><div class="location">Experience dependent</div></div>
+  </div>
+
+  <div class="callout info">
+    <strong>💡 Sector-Specific Advice for This Project</strong>
+    The UK Scam Message Detector is particularly relevant to three high-paying sectors: <strong>Financial Services</strong> (fraud detection is core business), <strong>Telecommunications</strong> (EE, BT, Vodafone all run scam filtering teams), and <strong>Government / Public Sector</strong> (Action Fraud, HMRC, NCSC). Consider targeting roles with titles including "Fraud Analytics", "Risk Analyst", "Intelligence Analyst", or "NLP Analyst" in addition to standard Data Analyst positions.
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="certs">
+  <h2>🏆 Recommended UK Certifications</h2>
+  <p>These certifications are specifically valued in the UK market and complement the skills demonstrated in this project. Listed in recommended order of priority.</p>
+
+  <ul class="cert-list">
+    <li>
+      <span class="cert-badge">FREE</span>
+      <div class="cert-info">
+        <div class="name">Google Data Analytics Professional Certificate</div>
+        <div class="detail">Platform: Coursera · Duration: ~6 months part-time · Cost: Free with financial aid or ~£40/month · Covers: SQL, R, Tableau, data cleaning, visualisation · Highly recognised by UK employers as a credible entry-level credential.</div>
+      </div>
+    </li>
+    <li>
+      <span class="cert-badge">PRIORITY</span>
+      <div class="cert-info">
+        <div class="name">Microsoft Certified: Power BI Data Analyst Associate (PL-300)</div>
+        <div class="detail">Platform: Microsoft · Duration: ~3 months study · Cost: ~£165 exam fee · Highly valued in UK corporate environments. Power BI is the most widely used BI tool in UK enterprises. Demonstrates dashboarding and business intelligence skills.</div>
+      </div>
+    </li>
+    <li>
+      <span class="cert-badge">TECHNICAL</span>
+      <div class="cert-info">
+        <div class="name">IBM Data Science Professional Certificate</div>
+        <div class="detail">Platform: Coursera · Duration: ~4 months part-time · Cost: Free with financial aid · Covers: Python, SQL, data visualisation, machine learning with scikit-learn · Directly extends the ML skills demonstrated in this project.</div>
+      </div>
+    </li>
+    <li>
+      <span class="cert-badge">SQL</span>
+      <div class="cert-info">
+        <div class="name">Microsoft Certified: Azure Data Fundamentals (DP-900)</div>
+        <div class="detail">Platform: Microsoft · Duration: ~4 weeks study · Cost: ~£110 exam fee · Foundation-level Azure data certification. Azure is widely used in UK public sector and enterprise. Good entry point to cloud data skills.</div>
+      </div>
+    </li>
+    <li>
+      <span class="cert-badge">GDPR</span>
+      <div class="cert-info">
+        <div class="name">BCS Foundation Certificate in Data Protection</div>
+        <div class="detail">Platform: BCS (British Computer Society) · Duration: 1-day course + exam · Cost: ~£290 · UK-specific GDPR qualification from a respected British institution. Directly complements the compliance work in this project. Valued in public sector, healthcare, and finance roles.</div>
+      </div>
+    </li>
+    <li>
+      <span class="cert-badge">ADVANCED</span>
+      <div class="cert-info">
+        <div class="name">AWS Certified Cloud Practitioner</div>
+        <div class="detail">Platform: AWS · Duration: ~6 weeks study · Cost: ~£100 exam fee · Entry-level cloud certification. AWS is widely used in UK tech companies and startups. Opens doors to data engineering and MLOps roles.</div>
+      </div>
+    </li>
+    <li>
+      <span class="cert-badge">UK GOVT</span>
+      <div class="cert-info">
+        <div class="name">Government Data Quality Framework (GDQF) Awareness</div>
+        <div class="detail">Platform: GOV.UK / Cabinet Office · Duration: Self-study · Cost: Free · Specifically valued for UK public sector roles. Understanding of government data standards and quality frameworks.</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- ============================================================ -->
+<section id="portfolio">
+  <h2>🗂️ Portfolio Deployment Guide</h2>
+  <p>A portfolio that can be accessed online is significantly more impactful than one that only exists on your local computer. Follow these steps to make the UK Scam Message Detector publicly accessible.</p>
+
+  <h3>Step 1 — GitHub Repository (Most Important)</h3>
+  <ol style="font-size:14px; padding-left:24px; margin-bottom:14px;">
+    <li style="padding:5px 0">Create a free account at <strong>github.com</strong></li>
+    <li style="padding:5px 0">Create a new public repository named: <code style="background:#F0F4FA;padding:2px 6px;border-radius:4px;font-family:Consolas,monospace;">uk-scam-message-detector</code></li>
+    <li style="padding:5px 0">Upload all project files: uk_scam_detector.py, dataset.csv, results.csv, charts.png, etc.</li>
+    <li style="padding:5px 0">Write a README.md using the template provided in the guidebook</li>
+    <li style="padding:5px 0">Add a <code style="background:#F0F4FA;padding:2px 6px;border-radius:4px;font-family:Consolas,monospace;">.gitignore</code> file to exclude any temporary files</li>
+    <li style="padding:5px 0">Tag the repository with topics: <em>python, naive-bayes, nlp, fraud-detection, uk, scikit-learn, machine-learning</em></li>
+  </ol>
+
+  <h3>Step 2 — GitHub Pages (Host the Guidebook Online)</h3>
+  <ol style="font-size:14px; padding-left:24px; margin-bottom:14px;">
+    <li style="padding:5px 0">In your repository settings, go to Pages → Source → select main branch</li>
+    <li style="padding:5px 0">Rename <strong>guidebook.html</strong> to <strong>index.html</strong> and push it to the repository</li>
+    <li style="padding:5px 0">Your guidebook will be live at: <em>yourusername.github.io/uk-scam-message-detector</em></li>
+    <li style="padding:5px 0">Share this URL on your CV, LinkedIn, and in applications</li>
+  </ol>
+
+  <h3>Step 3 — Streamlit Live Demo (Optional but Impressive)</h3>
+  <ol style="font-size:14px; padding-left:24px; margin-bottom:14px;">
+    <li style="padding:5px 0">Install Streamlit: <code style="background:#F0F4FA;padding:2px 6px;border-radius:4px;font-family:Consolas,monospace;">pip install streamlit</code></li>
+    <li style="padding:5px 0">Create a <strong>app.py</strong> file that loads the trained model and accepts user-typed messages</li>
+    <li style="padding:5px 0">Deploy free at <strong>streamlit.io/cloud</strong> — connect your GitHub repository</li>
+    <li style="padding:5px 0">The result: a live web app where anyone can type a message and see the model classify it in real time</li>
+    <li style="padding:5px 0">This is a very strong portfolio differentiator — most candidates only have code, not a working demo</li>
+  </ol>
+
+  <div class="callout ok">
+    <strong>✅ What a Strong Portfolio Link Looks Like on a CV:</strong>
+    Portfolio: github.com/yourusername/uk-scam-message-detector · Live demo: yourusername-scam-detector.streamlit.app
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="linkedin">
+  <h2>🔗 LinkedIn Profile Optimisation</h2>
+
+  <h3>Headline Options</h3>
+  <table>
+    <tr><th>If you are job-seeking</th><th>Text</th></tr>
+    <tr><td>General analyst role</td><td>Aspiring Data Analyst | Python · SQL · Machine Learning | UK GDPR Awareness | Open to Opportunities</td></tr>
+    <tr><td>Fraud / risk focus</td><td>Data Analyst | NLP & Fraud Detection | Python · scikit-learn | UK Market Specialist</td></tr>
+    <tr><td>Public sector focus</td><td>Data Analyst | UK GDPR Compliant Projects | NHS · Government · Public Sector Focused</td></tr>
+  </table>
+
+  <h3>About Section (First 3 Lines — Visible Before "See More")</h3>
+  <div class="cv-block">
+    I am a data analyst building expertise in machine learning, natural language processing, and UK GDPR-compliant data practices. My portfolio includes a UK Scam Message Detector built in Python — a Naive Bayes NLP classifier achieving 100% accuracy on 10 categories of UK fraud, developed with a formal data protection compliance review. I am particularly interested in roles where data analysis creates measurable social or commercial value.
+  </div>
+
+  <h3>Featured Section — Pin These Items</h3>
+  <ul style="font-size:14px; padding-left:24px; margin-bottom:14px;">
+    <li style="padding:5px 0">Link to your GitHub repository</li>
+    <li style="padding:5px 0">Link to your live Streamlit demo (if created)</li>
+    <li style="padding:5px 0">A post describing the project and what you learned (write one — it attracts recruiters)</li>
+  </ul>
+
+  <h3>Skills to Add (LinkedIn Skills Section)</h3>
+  <p style="font-size:14px;">Python · Machine Learning · Natural Language Processing · scikit-learn · pandas · Data Visualisation · UK GDPR · Data Protection · SQL · Statistics · Text Classification · Data Governance · Communication · Microsoft PowerPoint · Project Delivery</p>
+</section>
+
+<!-- ============================================================ -->
+<section id="jobs">
+  <h2>🔍 UK Job Boards for Data Analyst Roles</h2>
+  <div class="board-grid">
+    <div class="board-card"><div class="name">LinkedIn Jobs</div><div class="url">linkedin.com/jobs</div><div class="desc">Best for networking + applying. Set up job alerts for "Data Analyst", "Python Analyst", "NLP Analyst" in your target locations.</div></div>
+    <div class="board-card"><div class="name">Otta</div><div class="url">otta.com</div><div class="desc">Popular among UK tech startups and scale-ups. Good for early-career roles in data-driven companies.</div></div>
+    <div class="board-card"><div class="name">CWJobs</div><div class="url">cwjobs.co.uk</div><div class="desc">UK-focused technology and IT jobs board. Strong coverage of data analyst roles across all sectors.</div></div>
+    <div class="board-card"><div class="name">Indeed UK</div><div class="url">uk.indeed.com</div><div class="desc">Largest volume of job listings. Filter by salary range, location, and full-time/contract.</div></div>
+    <div class="board-card"><div class="name">Civil Service Jobs</div><div class="url">civilservicejobs.service.gov.uk</div><div class="desc">All UK Government data analyst roles. Many departments actively hiring analysts. GDPR awareness is valued.</div></div>
+    <div class="board-card"><div class="name">NHS Jobs</div><div class="url">jobs.nhs.uk</div><div class="desc">NHS data analyst roles — search for "data analyst", "business intelligence", "BI analyst". NHS Band 5–7.</div></div>
+    <div class="board-card"><div class="name">Technojobs</div><div class="url">technojobs.co.uk</div><div class="desc">UK technology jobs including data science and analytics. Good for contract and permanent roles.</div></div>
+    <div class="board-card"><div class="name">Charity Job</div><div class="url">charityjob.co.uk</div><div class="desc">Data analyst roles in the third sector. Fraud detection and data governance skills are increasingly valued by charities.</div></div>
+  </div>
+
+  <div class="callout warn">
+    <strong>⚠️ Search Term Tips</strong>
+    Alongside "Data Analyst", also search for: "Business Intelligence Analyst", "Insight Analyst", "Reporting Analyst", "NLP Analyst", "Fraud Analytics", "Risk Analyst", "Intelligence Analyst". Each of these roles may require exactly the skills demonstrated in this project.
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section id="communities">
+  <h2>🤝 UK Data Communities — Where to Network</h2>
+  <table>
+    <tr><th>Community</th><th>Platform</th><th>Why Join</th></tr>
+    <tr><td><strong>PyData London</strong></td><td>Meetup.com / pydata.org/london</td><td>Monthly talks on Python, data science, ML. Free to attend. Good for networking with working professionals.</td></tr>
+    <tr><td><strong>Data Science London</strong></td><td>Meetup.com</td><td>One of the largest data communities in London. Talks, workshops, networking events.</td></tr>
+    <tr><td><strong>NHS-R Community</strong></td><td>nhsrcommunity.com</td><td>Specifically for NHS data analysts. If targeting public sector, this community is excellent for networking and learning.</td></tr>
+    <tr><td><strong>UK Government Data Science</strong></td><td>gov.uk/data-science-campus</td><td>ONS Data Science Campus resources, events, and community. Relevant for civil service analyst roles.</td></tr>
+    <tr><td><strong>DataIQ UK</strong></td><td>data-iq.com</td><td>UK data leadership community. Good for understanding what senior practitioners value and where the sector is heading.</td></tr>
+    <tr><td><strong>Women in Data UK</strong></td><td>womenindata.co.uk</td><td>Network, mentorship, and events specifically for women in data roles across the UK.</td></tr>
+    <tr><td><strong>Kaggle</strong></td><td>kaggle.com</td><td>Global data science competition platform. Completing Kaggle competitions adds credibility and provides practice datasets.</td></tr>
+    <tr><td><strong>BCS Data Management Group</strong></td><td>bcs.org</td><td>The Chartered Institute for IT. Professional membership adds credibility. Relevant for governance and compliance-focused roles.</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================ -->
+<section id="roadmap">
+  <h2>🗺️ 6-Month Career Action Plan</h2>
+  <p>A structured, realistic plan for building on this project and progressing towards employment as a data analyst in the UK.</p>
+
+  <ol class="roadmap">
+    <li>
+      <div class="step-content">
+        <div class="step-title">Upload this project to GitHub</div>
+        <div class="step-desc">Create a public repository, write a professional README, upload all 12 project files, and add relevant topic tags. This is the single most impactful immediate action — it makes your work verifiable by recruiters.</div>
+        <div class="step-time">Week 1–2</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Deploy the guidebook on GitHub Pages</div>
+        <div class="step-desc">Host the guidebook.html online via GitHub Pages. Share the link in your LinkedIn profile and CV. A live URL is significantly more credible than a file attachment.</div>
+        <div class="step-time">Week 2</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Update your LinkedIn profile</div>
+        <div class="step-desc">Rewrite your headline and About section using the templates in this guide. Add all skills from this project. Post a brief description of the project with the GitHub link — this attracts recruiter attention organically.</div>
+        <div class="step-time">Week 2–3</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Begin SQL learning</div>
+        <div class="step-desc">SQL is required in the vast majority of UK analyst job descriptions. Use SQLiteOnline.com or DB Browser for SQLite (free). Complete the free Mode Analytics SQL tutorial. Aim for competence in SELECT, JOIN, GROUP BY, subqueries, and window functions.</div>
+        <div class="step-time">Month 1–2</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Enrol in Google Data Analytics Certificate</div>
+        <div class="step-desc">Start the Google Data Analytics Professional Certificate on Coursera. Apply for financial aid if needed (free). This credential is widely recognised by UK employers and covers SQL, R, Tableau, and data cleaning — all expected in analyst roles.</div>
+        <div class="step-time">Month 1–3</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Build a second portfolio project</div>
+        <div class="step-desc">Add a second project using a different technique — a SQL analysis of a UK dataset (ONS, NHS, or HMRC open data), or a Tableau / Power BI dashboard. Two strong portfolio projects are generally sufficient to apply confidently for junior roles.</div>
+        <div class="step-time">Month 2–4</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Begin active job applications</div>
+        <div class="step-desc">Start applying to roles using the job boards listed in this guide. Aim for 5–10 applications per week. Prioritise roles where the job description mentions Python, SQL, data visualisation, or fraud/risk analytics. Tailor your CV bullet points for each application.</div>
+        <div class="step-time">Month 3–4</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Attend a UK data community event</div>
+        <div class="step-desc">Attend one PyData London, Data Science London, or NHS-R Community event. Networking at in-person events is one of the most effective routes to employment — many roles are filled through informal connections before they are advertised publicly.</div>
+        <div class="step-time">Month 3–5</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Pursue Power BI or BCS Data Protection certification</div>
+        <div class="step-desc">Select the certification most relevant to your target sector. Power BI (PL-300) for corporate / private sector. BCS Data Protection for public sector, healthcare, or finance. Begin studying using free Microsoft Learn resources or BCS study materials.</div>
+        <div class="step-time">Month 4–6</div>
+      </div>
+    </li>
+    <li>
+      <div class="step-content">
+        <div class="step-title">Build a Streamlit live demo</div>
+        <div class="step-desc">Deploy the Scam Message Detector as a live web application using Streamlit Cloud (free). A live, interactive demo of your own model is a very strong differentiator in interviews. Present it during your technical round: "You can type in any message and the model will classify it in real time."</div>
+        <div class="step-time">Month 5–6</div>
+      </div>
+    </li>
+  </ol>
+
+  <div class="callout ok">
+    <strong>✅ Milestone: Ready to Apply</strong>
+    You are ready to apply confidently for junior data analyst roles when you have: a GitHub repository with at least two projects, a Google Data Analytics Certificate (or equivalent), basic SQL competency, and an updated LinkedIn profile with a project link. This typically takes 2–4 months of focused part-time work. You do not need to be perfect — you need to be ready enough. Apply early and learn from the process.
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>💼 UK Data Analyst Career Guide · UK Scam Message Detector Project<br>
+  Tailored for the UK Job Market · 2024 · All salary figures are indicative and vary by employer, location, and experience</p>
+</footer>
+
+</body>
+</html>

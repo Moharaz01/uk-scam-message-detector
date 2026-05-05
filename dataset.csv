@@ -1,0 +1,102 @@
+message,label
+"HMRC: You are owed a tax refund of £312.50. Click here to claim: http://hmrc-refund.uk/claim now or lose your entitlement",SCAM
+"Royal Mail: Your parcel is on hold. Pay £2.99 delivery fee to release it: http://royalmail-delivery.net/pay",SCAM
+"URGENT: Your PPI claim has been approved! You are owed £4,271. Call 0800 123 456 FREE to claim before deadline",SCAM
+"NHS: Your COVID booster appointment is ready. Click to confirm: http://nhs-booking.info/confirm",SCAM
+"Congratulations! You have been selected for a council tax rebate of £175. Visit gov-uk-rebate.com to apply now",SCAM
+"ALERT: Suspicious login to your Barclays account. Call us immediately on 0800 111 222 or your account will be suspended",SCAM
+"Lloyds Bank: We have detected unusual activity. Verify your details at: http://lloyds-secure.com/verify",SCAM
+"Your TV Licence expires today. To avoid a £1,000 fine pay now at tvlicence-renew.org",SCAM
+"Amazon UK: Your Prime account has been suspended due to a billing issue. Update payment at amazon-uk-support.net",SCAM
+"You have won a £500 Tesco gift card! Claim your prize at tesco-winner.com. Limited time only!",SCAM
+"DVLA: Your vehicle tax is overdue. Pay £80 now or face a £1,000 court summons: dvla-payment.uk",SCAM
+"Hi this is HMRC. We are filing a lawsuit against you for unpaid tax. To stop arrest call 0203 123 456 immediately",SCAM
+"Halifax: Your account has been locked. Restore access immediately at halifax-secure.online/unlock",SCAM
+"Free Msg: You are entitled to £3,500 in PPI compensation. Text CLAIM to 80888 or call 0844 899 000",SCAM
+"ROYAL MAIL: Package awaiting delivery. Pay customs charge of £3.49 at: http://rm-parcel.co/pay",SCAM
+"Congratulations! BT has selected you for a free broadband upgrade. Click to claim before Friday: bt-offer.net",SCAM
+"URGENT NOTICE: Your National Insurance number has been suspended due to suspicious activity. Call 0203 787 0155",SCAM
+"Natwest: We've noticed irregular transactions on your account. Verify now at natwest-fraud.com/secure",SCAM
+"Your energy bill refund of £243 is ready. Claim it at energy-gov-rebate.co.uk before the 31st",SCAM
+"Sky TV: Your subscription payment failed. Update your card details at sky-billing.net to avoid disconnection",SCAM
+"You've been randomly selected to receive £750 Amazon voucher. Claim now at amazon-promo-uk.com",SCAM
+"HMRC Tax Alert: Final notice before legal proceedings. Outstanding liability: £892. Pay immediately or face arrest",SCAM
+"Parcel from DPD is awaiting. Pay outstanding £1.45 surcharge at dpd-uk.delivery/pay to release",SCAM
+"Your Santander card has been used abroad. If not you, call 0800 222 333 or click: santander-verify.net",SCAM
+"Job opportunity: Work from home earning £800/week guaranteed. No experience needed. Apply at ukjobs-now.co.uk",SCAM
+"URGENT: HMRC tax office will take legal action in 24 hours. Stop proceedings by calling 020 3239 1234",SCAM
+"Congratulations from EE! You have earned 2000 reward points. Redeem at ee-rewards.biz before they expire",SCAM
+"Vodafone: Your account is due for renewal. Claim a free iPhone 15 upgrade at vodafone-promo.net now",SCAM
+"Your student loan statement is ready. Update bank details to receive payment at student-loan.gov-uk.net",SCAM
+"HMRC: You have an unclaimed tax rebate of £489.20 expiring soon. Verify at hmrc-rebate.co/claim",SCAM
+"Hi, your electricity supplier owes you £134 back. Claim at energy-refund.co.uk before this month ends",SCAM
+"UK LOTTERY WINNER: You have won £250,000. To claim call 07700 123456 or email winner@[redacted-domain].co",SCAM
+"Your Hermes parcel could not be delivered. Reschedule at evri-delivery.net and pay £1.20 redelivery fee",SCAM
+"NatWest fraud alert: Transaction of £450 at AMAZON blocked. Confirm at natwest-check.com if authorised",SCAM
+"FREE GOVERNMENT GRANT: UK residents may be eligible for £2,000 green energy grant. Apply at govgrant-uk.net",SCAM
+"Mum, can you get me an Amazon gift card for £150? I'll pay you back tomorrow. My phone is broken - using friend's",SCAM
+"You have not paid your council tax for 3 months. Court action starts in 48 hours unless you pay now",SCAM
+"DVLA: Your driving licence needs renewing urgently. Complete at dvla-licence.co.uk to avoid a £1000 penalty",SCAM
+"Congratulations! Argos has picked you as today's winner. Claim £500 voucher at argos-prize.co.uk",SCAM
+"TSB: Unusual payment attempt blocked. Verify it was you at tsb-secure.info or we will suspend your account",SCAM
+"Hey, I'm stuck abroad and my wallet was stolen. Please send £200 urgently via bank transfer. Will repay asap",SCAM
+"Your Universal Credit payment may be affected. Confirm your details at universalcredit-update.gov-uk.net",SCAM
+"Asda Rewards: You have £85 cashback waiting. Redeem now at asda-cashback.co.uk before midnight tonight",SCAM
+"Ofgem: You are entitled to a £400 energy support payment. Submit your bank details at ofgem-payment.uk",SCAM
+"HSBC: We've suspended your online banking. Restore at hsbc-verification.com within 24 hours or lose access",SCAM
+"Your O2 contract has ended and you are owed £67 loyalty credit. Claim at o2-loyalty.net today only",SCAM
+"WARNING: Your IP address has been flagged for illegal activity. Call HMRC cybercrime unit: 0203 514 0000",SCAM
+"Amazon: Verify your identity at amazon-uk-id.com to unlock your account and receive your £30 voucher",SCAM
+"Final warning from DVLA: Pay £35 outstanding vehicle charge within 24 hours or face a £200 fixed penalty",SCAM
+"British Gas: Your smart meter data is missing. Update at britishgas-account.net to keep your tariff active",SCAM
+"Hi mate, just checking in - how's the new job going?",LEGITIMATE
+"Your Barclays statement is ready to view in the app. Log in at barclays.co.uk",LEGITIMATE
+"Tesco Clubcard: You have 350 points to spend. Use them on your next shop or swap for vouchers in the app",LEGITIMATE
+"Reminder: Your GP appointment is tomorrow at 10:30am at Elm Park Surgery. Call 01234 567890 to cancel.",LEGITIMATE
+"Hi love, can you pick up some milk on the way home? We're almost out",LEGITIMATE
+"Your BT broadband bill of £42.99 is due on the 15th. Set up Direct Debit to avoid late fees at bt.com/billing",LEGITIMATE
+"EE: Your monthly bill of £25 is ready to view. Pay by the 20th via the My EE app or at ee.co.uk",LEGITIMATE
+"Delivery from Amazon: Your order #204-6789 has been dispatched and will arrive tomorrow by 9pm",LEGITIMATE
+"Waitrose: Your Rapid Delivery order is on its way. Estimated arrival in 30-45 minutes",LEGITIMATE
+"A colleague from work: Could we reschedule tomorrow's meeting to 3pm? There is a scheduling conflict in the morning",LEGITIMATE
+"Your National Rail ticket confirmation for London Paddington to Bristol Temple Meads on 14 Nov is attached",LEGITIMATE
+"Sky Sports: Match alert - Arsenal vs Chelsea kicks off in 30 minutes. Watch live on Sky Sports Main Event",LEGITIMATE
+"Your Nationwide account ending 1234 - transaction of £45.60 at Sainsburys. Not you? Call 03457 30 20 11",LEGITIMATE
+"Boots Advantage Card: Earn triple points this weekend in store and online. Check your balance at boots.com",LEGITIMATE
+"This is the lettings agency. The boiler inspection is confirmed for Thursday between 9am and 12pm",LEGITIMATE
+"Your ASOS order has been refunded. £34.99 should appear in your account within 5 working days",LEGITIMATE
+"Just landed at Heathrow - will be at yours in about an hour! Traffic looks okay",LEGITIMATE
+"M&S Bank: Your current account statement for October is now available in the M&S Bank app",LEGITIMATE
+"Your MOT reminder: Your vehicle's MOT expires on 22 December. Book at any DVSA-approved centre.",LEGITIMATE
+"Happy Birthday! Hope you have a brilliant day. Let's catch up for a pint soon 🎉",LEGITIMATE
+"Your Virgin Money savings interest payment of £12.43 has been added to your account today",LEGITIMATE
+"Deliveroo order confirmed: Nandos x2 chicken wraps arriving in 25-35 minutes to your address",LEGITIMATE
+"From HR: Please complete your annual leave request before 5pm Friday using the company portal",LEGITIMATE
+"Your Netflix subscription renews on 1 December for £10.99. Manage your plan at netflix.com/account",LEGITIMATE
+"John Lewis: Your click & collect order is ready for pickup at the Oxford Street store. Bring your confirmation",LEGITIMATE
+"Great chatting to you at the networking event today! Here's my LinkedIn: linkedin.com/in/samjones-uk",LEGITIMATE
+"Your Monzo card has been dispatched and should arrive within 3-5 working days",LEGITIMATE
+"School reminder: Parent's evening is on 28 November 6-8pm. Book your slot via the school app",LEGITIMATE
+"Your Spotify Premium renews on 8 December for £10.99. Cancel anytime at spotify.com/account",LEGITIMATE
+"Reminder from Specsavers: Your eye test is booked for Thursday 15th at 2:45pm in Birmingham city centre",LEGITIMATE
+"Your Council Tax bill for 2024-25 has been updated. Log in to your council account to view it online",LEGITIMATE
+"Co-op: Our new local deal is live - 25% off all fresh bakery items until Sunday. Check app for details",LEGITIMATE
+"Your new passport has been dispatched from His Majesty's Passport Office. Expected delivery: 2 working days",LEGITIMATE
+"Reminder: Direct Debit of £650 for rent leaves your account on 1st of every month",LEGITIMATE
+"Thanks for visiting the dentist today! Your next appointment is booked for 14 March at 9am",LEGITIMATE
+"Your Trainline eticket for tomorrow's journey is in your email. Don't forget to download it",LEGITIMATE
+"Class reminder: Your yoga session at PureGym starts in 1 hour. See you there!",LEGITIMATE
+"Your Universal Credit payment of £742.15 was paid today. Check your journal for any messages from your work coach",LEGITIMATE
+"Student Finance England: Your maintenance loan payment of £1,455 has been paid into your account",LEGITIMATE
+"Got your voicemail - I'll call you back after 6pm when I'm done with meetings",LEGITIMATE
+"Your Ocado order arrives between 7pm and 8pm tonight. You can track it on the Ocado app",LEGITIMATE
+"Argos: Your order for the Dyson Hoover is ready for collection at your chosen store today",LEGITIMATE
+"Just a reminder that tomorrow is bin day - don't forget to put the green recycling bin out!",LEGITIMATE
+"Your Halifax mortgage payment of £987 was collected successfully on 1 November",LEGITIMATE
+"Team lunch is booked for Friday at 12:30 at the Italian place on High Street. Looking forward to it!",LEGITIMATE
+"Your Amazon Prime Video rental of 'Oppenheimer' expires in 48 hours. Watch it before it's gone",LEGITIMATE
+"Lidl Plus: This week's offers are live in the app. Get 20p off per litre at our forecourt stations",LEGITIMATE
+"You left a great review for Blue Duck Cafe - thank you! It really helps small businesses like ours",LEGITIMATE
+"Your Trustpilot review has been published. Thanks for sharing your experience with us",LEGITIMATE
+"Reminder: Your boiler service with British Gas is scheduled for Tuesday 19th between 8am and 12pm",LEGITIMATE
+"Your TV Licence has been renewed automatically. Next renewal: October 2025. Reference: AB123456",LEGITIMATE

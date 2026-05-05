@@ -1,0 +1,11 @@
+Message,Prediction,Scam_Probability_%
+HMRC: You have an unclaimed tax refund of £267. Claim before Friday at hmrc-refunds.net,SCAM,83.5
+Message from a contact: Are you free for lunch on Thursday? The new Italian place has excellent reviews,LEGITIMATE,32.1
+Urgent: Your Barclays account has been compromised. Verify at barclays-secure.info now,SCAM,64.8
+Your Amazon delivery is arriving today between 2pm and 6pm. Track in the app,LEGITIMATE,19.5
+Congratulations! You have won a free iPad. Claim your prize at apple-winners.co.uk,SCAM,82.5
+Reminder from the dentist: your six-month check-up is booked for 9am tomorrow,LEGITIMATE,12.9
+Royal Mail: Failed delivery. Pay £2.99 holding fee at royalmail-parcel.net to redeliver,SCAM,70.7
+Your Spotify family plan has been updated. New monthly bill: £16.99 from 1st November,LEGITIMATE,28.1
+DVLA FINAL NOTICE: Pay road tax arrears of £145 in 24 hours or face court proceedings,SCAM,81.9
+Workplace invitation: After-work gathering at a local venue on Friday at 6pm,LEGITIMATE,39.3
