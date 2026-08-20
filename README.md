@@ -17,6 +17,8 @@ With SMS scam fraud costing UK consumers millions annually, this project builds 
 | Vectorization | TF-IDF (Unigram + Bigram) |
 | Algorithm | Multinomial Naive Bayes |
 
+> **Note on the 100% figure:** the test set is only 20 messages (a 100-message dataset with an 80/20 split), so this accuracy is a proof-of-concept result, not a claim that generalises to real-world traffic. A production system would need a much larger, more diverse, continuously-updated dataset to validate this kind of score.
+
 ## 🧠 How It Works
 
 1. **Data Collection** — 100 labelled UK SMS messages (50 scam, 50 legitimate)
@@ -30,7 +32,7 @@ With SMS scam fraud costing UK consumers millions annually, this project builds 
 ```
 uk-scam-message-detector/
 │
-├── uk_scan_detector.py       # Main classifier script
+├── uk_scam_detector.py       # Main classifier script
 ├── dataset.csv               # 100 labelled UK SMS messages
 ├── results.csv               # Prediction results
 ├── new_predictions.csv       # New message predictions
@@ -68,7 +70,7 @@ cd uk-scam-message-detector
 pip install scikit-learn pandas numpy matplotlib
 
 # Run the detector
-python uk_scan_detector.py
+python uk_scam_detector.py
 ```
 
 ## 📈 Results & Insights
